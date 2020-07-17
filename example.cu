@@ -147,34 +147,3 @@ int main() {
     std::cout << "Execution success" << std::endl;
     return 0;
 }
-
-/* void attgridgen_gpu(const at::Tensor attx, const at::Tensor atty, */
-/*     at::Tensor map_xi, at::Tensor map_yi, */
-/*     at::Tensor index_x, at::Tensor index_y, */
-/*     const int batch_size, const int att_size, const int out_size, */ 
-/*     const float threshold, const int iters) */
-/* { */
-/*     int num_kernels = batch_size; */
-/*     AT_DISPATCH_FLOATING_TYPES( */
-/*         attx.type(), "att_grid_generator_gpu", ([&] { */
-/*             scalar_t *attx_ = attx.data<scalar_t>(); */
-/*             scalar_t *atty_ = atty.data<scalar_t>(); */
-/*             scalar_t *map_xi_ = map_xi.data<scalar_t>(); */
-/*             scalar_t *map_yi_ = map_yi.data<scalar_t>(); */
-/*             scalar_t *index_x_ = index_x.data<scalar_t>(); */
-/*             scalar_t *index_y_ = index_y.data<scalar_t>(); */
-
-/*             att_grid_generator_gpu_kernel<<<GET_BLOCKS(num_kernels), CUDA_NUM_THREADS>>>( */
-/*                 num_kernels, attx_, atty_, map_xi_, map_yi_, index_x_, index_y_, */ 
-/*                 batch_size, att_size, out_size, threshold, iters); */
-
-/*         }) */
-/*     ); */
-
-/*     cudaError_t err = cudaGetLastError(); */
-/*     if (err != cudaSuccess) { */
-/*         printf("error in att_grid_generator: %s\n", cudaGetErrorString(err)); */
-/*     } */
-
-/* } */
-
